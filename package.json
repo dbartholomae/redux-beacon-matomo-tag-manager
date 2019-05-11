@@ -1,0 +1,76 @@
+{
+  "name": "redux-beacon-matomo-tag-manager",
+  "version": "0.0.0",
+    "description": "Matomo (formerly Piwik) tag manager integration for redux-beacon.",
+  "homepage": "https://github.com/dbartholomae/redux-beacon-matomo-tag-manager",
+  "author": {
+    "name": "Daniel Bartholomae",
+    "email": "daniel@bartholomae.name",
+    "url": "https://github.com/dbartholomae"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "Redux",
+    "Beacon",
+    "Redux Beacon",
+    "Matomo",
+    "Tag Manager",
+    "Piwik",
+    "Analytics"
+  ],
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "private": false,
+  "dependencies": {
+    "@types/debug": "^0.0.31",
+    "debug": "^4.1.0"
+  },
+  "directories": {
+    "docs": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "rimraf ./lib && tsc --project tsconfig.build.json",
+    "docs": "typedoc",
+    "release": "semantic-release",
+    "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
+    "test:integration": "jest -c jest.integration.config.js",
+    "test:unit": "jest -c jest.unit.config.js",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "precommit:lint:fix": "tslint --project tsconfig.json --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.0",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "@types/jest": "^23.3.9",
+    "codecov": "^3.2.0",
+    "cross-env": "^5.2.0",
+    "husky": "^1.1.4",
+    "jest": "^23.6.0",
+    "jest-junit": "^6.3.0",
+    "lint-staged": "^8.0.5",
+    "pkg-ok": "^2.3.1",
+    "prettier-standard": "^8.0.1",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^15.10.3",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.7.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.1.2"
+  },
+  "license": "MIT",
+  "repository": "github:dbartholomae/redux-beacon-matomo-tag-manager"
+}
