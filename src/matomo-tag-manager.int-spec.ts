@@ -5,10 +5,10 @@ describe('matomo-tag-manager', () => {
   beforeAll(async () => {
     page.on('console', msg => consoleListener(msg.text()))
     await page.goto('http://localhost:3000/')
+    await delay(1000)
   })
 
   it('activates the test trigger on initialization', async () => {
-    await delay(1000)
     expect(consoleListener).toHaveBeenCalledWith('Tag manager loaded')
   })
 })
