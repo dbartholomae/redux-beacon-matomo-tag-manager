@@ -1,9 +1,9 @@
-const commonConfig = require('./jest.config')
+const commonConfig = require('./jest.common.config')
 
 module.exports = {
   ...commonConfig,
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*'],
+  collectCoverageFrom: ['src/**/*', '!src/**/*.int-spec.ts'],
   coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
@@ -13,5 +13,5 @@ module.exports = {
       statements: 100
     }
   },
-  testRegex: '.*\.(test|spec)\\.(t|j)sx?$'
+  testRegex: '.*\\.(test|spec)\\.(t|j)sx?$'
 }

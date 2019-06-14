@@ -15,6 +15,20 @@ npm install redux-beacon-matomo-tag-manager --save
 There is [additional documentation](https://dbartholomae.github.com/redux-beacon-matomo-tag-manager). 
 
 ## Usage
+1. Sign up for or install [Matomo Tag Manager](https://matomo.org/docs/tag-manager/) and create a new web container.
+2. Add the Matomo Tag Manager container snippet to your site.
 
 ```typescript
+import MatomoTagManager from 'redux-beacon-matomo-tag-manager'
+
+// Create or import an events map.
+// See "getting started" pages for instructions.
+
+const options = {}
+
+const mtm = MatomoTagManager(options);
+
+const gtmMiddleware = createMiddleware(eventsMap, mtm);
+const gtmMetaReducer = createMetaReducer(eventsMap, menubar);
+
 ```

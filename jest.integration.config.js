@@ -1,6 +1,8 @@
-const commonConfig = require('./jest.config')
+const commonConfig = require('./jest.common.config')
 
 module.exports = {
   ...commonConfig,
-  testRegex: '.*\.int-(test|spec)\\.(t|j)sx?$'
+  preset: 'jest-puppeteer-preset',
+  testEnvironment: 'jest-environment-puppeteer',
+  testRegex: '.*\.int-(test|spec)\\.tsx?$'
 }
