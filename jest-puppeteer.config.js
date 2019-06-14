@@ -1,13 +1,10 @@
 module.exports = {
-  launch: {
-    headless: false
-  },
   server: {
     command: 'npm start',
     host: 'localhost',
     protocol: 'http',
-    port: 3000,
-    launchTimeout: 600000,
+    port: 8080,
+    launchTimeout: 60000,
     usedPortAction: 'kill'
   }
 }
