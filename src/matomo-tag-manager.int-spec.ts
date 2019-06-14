@@ -11,4 +11,10 @@ describe('matomo-tag-manager', () => {
   it('activates the test trigger on initialization', async () => {
     expect(consoleListener).toHaveBeenCalledWith('Tag manager loaded')
   })
+
+  it('triggers the integration test event on initialization', async () => {
+    expect(consoleListener).toHaveBeenCalledWith(
+      'Integration test event triggered'
+    )
+  })
 })

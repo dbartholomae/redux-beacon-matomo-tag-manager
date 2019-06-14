@@ -1,12 +1,11 @@
-import debug from 'debug'
-import Module from './index'
+import MatomoTagManager, { IMatomoTagManagerOptions } from './'
 
-jest.mock('debug')
-const mockedDebug = (debug as any) as jest.Mock<typeof debug>
-
-test('should send debug message on start', () => {
-  const mockLogger = jest.fn()
-  mockedDebug.mockReturnValue(mockLogger as any)
-  new Module().start()
-  expect(mockLogger).toBeCalled()
+describe('index', () => {
+  it('exports the MatomoTagManager', () => {
+    expect(MatomoTagManager).toBeDefined()
+  })
+  it('exports the IMatomoTagManagerOptions', () => {
+    const options: IMatomoTagManagerOptions = {}
+    expect(options).toBeDefined()
+  })
 })

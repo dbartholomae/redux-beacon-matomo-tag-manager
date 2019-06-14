@@ -10,25 +10,38 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 npm install redux-beacon-matomo-tag-manager --save
 ```
 
-## Documentation
-
-There is [additional documentation](https://dbartholomae.github.com/redux-beacon-matomo-tag-manager). 
-
 ## Usage
 1. Sign up for or install [Matomo Tag Manager](https://matomo.org/docs/tag-manager/) and create a new web container.
 2. Add the Matomo Tag Manager container snippet to your site.
+3. Install [redux-beacon](https://rangle.gitbook.io/redux-beacon/) in your app
+4. Use this library to connect redux-beacon to the tag manager
 
 ```typescript
+import { applyMiddleware, createStore } from 'redux'
+import { createMiddleware } from 'redux-beacon'
 import MatomoTagManager from 'redux-beacon-matomo-tag-manager'
 
-// Create or import an events map.
-// See "getting started" pages for instructions.
+const ACTION_TYPE = 'ACTION_TYPE'
 
-const options = {}
+// Set up which actions should trigger which events or variables
+const eventsMap = {
+  [ACTION_TYPE]: () => ({
+    event: 'integrationTestEvent'
+  })
+}
 
-const mtm = MatomoTagManager(options);
+// Create the middleware
+const matomoTagManager = MatomoTagManager()
+const matomoTagManagerMiddleware = createMiddleware(eventsMap, matomoTagManager)
 
-const gtmMiddleware = createMiddleware(eventsMap, mtm);
-const gtmMetaReducer = createMetaReducer(eventsMap, menubar);
+const store = createStore((state = {}) => state, applyMiddleware(matomoTagManagerMiddleware))
 
+// When you dispatch an action, the middleware will trigger the event
+store.dispatch({
+  type: ACTION_TYPE
+})
 ```
+
+## Thanks
+
+Thanks to [Matomo](https://matomo.org) for supporting this project by providing an analytics property for integration testing this library.

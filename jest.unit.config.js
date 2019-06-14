@@ -13,5 +13,6 @@ module.exports = {
       statements: 100
     }
   },
+  testEnvironment: 'node',
   testRegex: '.*\\.(test|spec)\\.(t|j)sx?$'
 }
