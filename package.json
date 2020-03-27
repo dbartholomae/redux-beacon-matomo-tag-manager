@@ -1,6 +1,6 @@
 {
   "name": "redux-beacon-matomo-tag-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Matomo (formerly Piwik) tag manager integration for redux-beacon.",
   "homepage": "https://github.com/dbartholomae/redux-beacon-matomo-tag-manager",
   "author": {
