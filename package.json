@@ -41,7 +41,9 @@
     "test:unit": "jest -c jest.unit.config.js",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --project tsconfig.json --fix",
-    "precommit:lint:fix": "tslint --project tsconfig.json --fix"
+    "precommit:lint:fix": "tslint --project tsconfig.json --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -82,5 +84,9 @@
     "webpack-dev-server": "^3.10.3"
   },
   "license": "MIT",
-  "repository": "git@github.com:dbartholomae/redux-beacon-matomo-tag-manager.git"
+  "repository": "git@github.com:dbartholomae/redux-beacon-matomo-tag-manager.git",
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
+  }
 }
