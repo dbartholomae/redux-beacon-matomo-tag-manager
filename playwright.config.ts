@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -21,19 +21,19 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:5173',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on-first-retry'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+      use: { ...devices['Desktop Chrome'] }
+    }
   ],
   webServer: {
     command: 'npm run start',
     url: 'http://127.0.0.1:5173',
-    reuseExistingServer: !process.env.CI,
-  },
-});
+    reuseExistingServer: !process.env.CI
+  }
+})

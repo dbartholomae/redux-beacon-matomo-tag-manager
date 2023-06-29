@@ -6,7 +6,7 @@ test('runs the tag on pageview', async ({ page }) => {
     messages.push(message.text())
   })
   await page.goto('/')
-  await expect(messages).toContain('Tag manager loaded')
+  expect(messages).toContain('Tag manager loaded')
 })
 
 test('runs the tag on custom event', async ({ page }) => {
@@ -15,5 +15,5 @@ test('runs the tag on custom event', async ({ page }) => {
     messages.push(message.text())
   })
   await page.goto('/')
-  await expect(messages).toContain('Integration test event triggered')
+  expect(messages).toContain('Integration test event triggered')
 })
