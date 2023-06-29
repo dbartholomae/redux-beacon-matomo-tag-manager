@@ -11,10 +11,8 @@ lib
 
 # package management
 npm-debug.log*
-package-lock.json
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 
 # testing
 /coverage
