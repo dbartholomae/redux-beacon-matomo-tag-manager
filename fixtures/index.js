@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux'
 import { createMiddleware } from 'redux-beacon'
-import MatomoTagManager from '../lib/index'
+import MatomoTagManager from '../lib/index.js'
 
 const ACTION_TYPE = 'ACTION_TYPE'
 
