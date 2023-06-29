@@ -38,6 +38,8 @@ jobs:
         run: pnpm run test:unit
       - name: Upload code coverage to codecov
         uses: codecov/codecov-action@v3
+      - name: Install Playwright browsers
+        run: pnpm run pretest:integration
       - name: Run integration tests
         run: pnpm run test:integration
       - name: Check package output
