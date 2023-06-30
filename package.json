@@ -42,7 +42,9 @@
     "test:unit": "jest",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --project tsconfig.json --fix",
-    "precommit:lint:fix": "tslint --project tsconfig.json --fix"
+    "precommit:lint:fix": "tslint --project tsconfig.json --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -76,5 +78,9 @@
     "vite-plugin-commonjs": "^0.8.0"
   },
   "license": "MIT",
-  "repository": "git@github.com:dbartholomae/redux-beacon-matomo-tag-manager.git"
+  "repository": "git@github.com:dbartholomae/redux-beacon-matomo-tag-manager.git",
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
+  }
 }
